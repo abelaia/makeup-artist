@@ -1,0 +1,233 @@
+.about {
+    @include adaptive(padding-block, $section-gap);
+
+    &__inner {
+        display: grid;
+        row-gap: $space-2xl;
+
+        @include desktop {
+            @include twelve-columns;
+
+            align-items: start;
+        }
+    }
+
+    &__visual {
+        position: relative;
+        justify-self: center;
+        width: min(100%, $about-compact-width);
+
+        @include desktop {
+            position: sticky;
+            top: calc($header-height + $space-lg);
+            grid-column: 1 / 6;
+        }
+    }
+
+    &__compact {
+        @include column(0);
+    }
+
+    &__lid {
+        border-radius: $about-lid-radius;
+        background-color: $color-deep;
+        box-shadow: inset 0 0 0 2px $color-deep-2;
+
+        @include padding('x', 5);
+        @include padding('y', 5);
+    }
+
+    &__mirror {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: $about-mirror-ratio;
+        border-radius: $radius-inner;
+        background-color: $color-soft;
+
+        .ui-photo,
+        .ui-plate {
+            height: 100%;
+            border-radius: 0;
+        }
+    }
+
+    &__shine {
+        position: absolute;
+        z-index: 2;
+        top: -10%;
+        left: -30%;
+        width: 55%;
+        height: 130%;
+        background: linear-gradient(100deg, transparent 20%, rgb(255 255 255 / 0.3) 50%, transparent 80%);
+        transform: rotate(16deg);
+        pointer-events: none;
+    }
+
+    &__hinge {
+        height: $about-hinge-height;
+        border-radius: 0 0 $space-2xs $space-2xs;
+        background: linear-gradient($color-bulb-socket, $color-deep);
+
+        @include margin('x', 8);
+    }
+
+    &__pans {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-radius: $about-pans-radius;
+        background-color: $color-deep;
+        box-shadow:
+            $shadow-lift,
+            inset 0 0 0 2px $color-deep-2;
+        gap: $space-md $space-xs;
+
+        @include margin('top', 1);
+        @include padding('x', 5);
+        @include padding('y', 6);
+
+        @include tablet {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+    }
+
+    &__pan {
+        align-items: center;
+        color: $color-paper;
+        font-size: $text-xs;
+        text-align: center;
+
+        @include column($space-xs);
+    }
+
+    &__pan-color {
+        width: $about-pan-size;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-image: radial-gradient(circle at 35% 30%, rgb(255 255 255 / 0.45), transparent 45%);
+        box-shadow:
+            inset 0 3px 6px rgb(0 0 0 / 0.18),
+            0 0 0 4px $color-bulb-socket;
+
+        &--nude {
+            background-color: $pan-nude;
+        }
+
+        &--wedding {
+            background-color: $pan-wedding;
+        }
+
+        &--evening {
+            background-color: $pan-evening;
+        }
+
+        &--photo {
+            background-color: $pan-photo;
+        }
+
+        &--prom {
+            background-color: $pan-prom;
+        }
+
+        &--creative {
+            background-color: $pan-creative;
+        }
+    }
+
+    &__badge {
+        --tilt: -8deg;
+
+        position: absolute;
+        z-index: $z-raised;
+        top: calc(-1 * $space-md);
+        right: $space-md;
+        color: $color-accent-ink;
+        border-radius: $radius-pill;
+        background-color: $color-accent;
+        box-shadow: $shadow-card;
+        white-space: nowrap;
+        animation: float $float-cycle ease-in-out infinite;
+
+        @include title($text-lg);
+        @include padding('x', 6);
+        @include padding('y', 4);
+
+        @include desktop {
+            right: calc(-1 * $space-2xl);
+        }
+    }
+
+    &__content {
+        @include column($space-lg);
+
+        @include desktop {
+            grid-column: 7 / 13;
+        }
+    }
+
+    &__title {
+        font-size: $text-section;
+    }
+
+    &__intro {
+        @include title($text-title);
+
+        line-height: 1.3;
+    }
+
+    &__paragraph {
+        color: $color-ink-2;
+    }
+
+    &__points {
+        display: grid;
+        gap: $space-sm;
+
+        @include margin('top', 2);
+
+        @include tablet {
+            grid-template-columns: repeat(auto-fit, minmax($about-point-min-width, 1fr));
+        }
+    }
+
+    &__point {
+        position: relative;
+        isolation: isolate;
+        border-radius: $radius-inner;
+        background-color: $color-paper-2;
+
+        @include lift;
+
+        @include column($space-xs);
+        @include padding('x', 5);
+        @include padding('y', 5);
+    }
+
+    &__point-title {
+        @include title($text-lg);
+    }
+
+    &__point-text {
+        color: $color-ink-2;
+        font-size: $text-sm;
+    }
+
+    &__reviews-card {
+        margin: 0;
+        border-radius: $radius;
+        background-color: $color-soft-2;
+
+        @include column($space-sm);
+        @include padding('x', 8);
+        @include padding('y', 8);
+    }
+
+    &__reviews-text {
+        @include title($text-title);
+    }
+
+    &__reviews-missing {
+        max-width: 32ch;
+        color: $color-ink-2;
+        font-size: $text-sm;
+    }
+}

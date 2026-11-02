@@ -1,0 +1,39 @@
+@mixin margin($direction, $size) {
+    @include _conditions('margin', $direction, $size);
+}
+
+@mixin padding($direction, $size) {
+    @include _conditions('padding', $direction, $size);
+}
+
+@mixin _conditions($type, $direction, $size) {
+    @if ($direction == y) {
+        #{$type}: {
+            top: calc($indent-step * #{$size});
+            bottom: calc($indent-step * #{$size});
+        }
+    }
+
+    @if ($direction == x) {
+        #{$type}: {
+            right: calc($indent-step * #{$size});
+            left: calc($indent-step * #{$size});
+        }
+    }
+
+    @if ($direction == top) {
+        #{$type}-top: calc($indent-step * #{$size});
+    }
+
+    @if ($direction == bottom) {
+        #{$type}-bottom: calc($indent-step * #{$size});
+    }
+
+    @if ($direction == right) {
+        #{$type}-right: calc($indent-step * #{$size});
+    }
+
+    @if ($direction == left) {
+        #{$type}-left: calc($indent-step * #{$size});
+    }
+}

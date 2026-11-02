@@ -1,0 +1,192 @@
+.header {
+    position: sticky;
+    z-index: $z-sticky-nav;
+    top: 0;
+    border-bottom: $hairline solid transparent;
+    background-color: $color-paper;
+
+    @include transition(border-color);
+
+    &--compact {
+        border-bottom-color: $color-rule;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $header-height;
+        gap: $space-lg;
+    }
+
+    &__brand {
+        display: inline-flex;
+        align-items: baseline;
+        color: $color-ink;
+        text-decoration: none;
+        gap: $space-xs;
+
+        @include touch-target;
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+    }
+
+    &__brand-name {
+        @include display($text-lg);
+
+        letter-spacing: -0.03em;
+    }
+
+    &__brand-role {
+        @include label;
+    }
+
+    &__nav {
+        display: none;
+
+        @include desktop {
+            display: block;
+            margin-left: auto;
+        }
+    }
+
+    &__action {
+        display: none;
+
+        @include desktop {
+            display: inline-flex;
+        }
+    }
+
+    &-nav {
+        &__list {
+            display: flex;
+            gap: $space-xs;
+        }
+
+        &__link {
+            display: inline-flex;
+            align-items: center;
+            color: $color-ink;
+            font-size: $text-md;
+            font-weight: $font-weight-medium;
+            text-decoration: none;
+
+            @include touch-target;
+            @include padding('x', 3);
+
+            @include hover {
+                text-decoration: underline;
+                text-decoration-color: $color-accent;
+                text-decoration-thickness: 1.5px;
+                text-underline-offset: 6px;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $color-focus;
+                outline-offset: 2px;
+            }
+        }
+
+        &--menu {
+            .header-nav__list {
+                flex-direction: column;
+                gap: $space-xs;
+            }
+
+            .header-nav__link {
+                @include display($text-display-s);
+                @include padding('x', 0);
+            }
+        }
+    }
+
+    &-burger {
+        width: $control-height;
+        height: $control-height;
+        color: $color-ink;
+        border: $rule-ink solid $color-ink;
+        border-radius: $radius-pill;
+        background-color: transparent;
+
+        @include flex-center;
+        @include pressable;
+
+        &:focus-visible {
+            outline: 2px solid $color-focus;
+            outline-offset: 2px;
+        }
+
+        @include desktop {
+            display: none;
+        }
+
+        &__overlay {
+            position: fixed;
+            z-index: $z-modal;
+            inset: 0;
+            background-color: $color-paper-2;
+        }
+
+        &__panel {
+            position: fixed;
+            z-index: $z-modal;
+            inset: 0;
+            overflow-y: auto;
+            justify-content: center;
+
+            @include column($space-xl);
+            @include padding('x', 6);
+            @include padding('y', 20);
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        &__title {
+            position: absolute;
+            top: $space-lg;
+            left: $space-lg;
+
+            @include display($text-lg);
+        }
+
+        &__description {
+            position: absolute;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+
+        &__socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $space-md;
+        }
+
+        &__close {
+            position: absolute;
+            top: $space-sm;
+            right: $space-md;
+            width: $control-height;
+            height: $control-height;
+            color: $color-ink;
+            border: $rule-ink solid $color-ink;
+            border-radius: $radius-pill;
+            background-color: transparent;
+
+            @include flex-center;
+
+            &:focus-visible {
+                outline: 2px solid $color-focus;
+                outline-offset: 2px;
+            }
+        }
+    }
+}

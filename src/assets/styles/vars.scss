@@ -1,0 +1,131 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$mouse-device: '(hover: hover) and (pointer: fine)';
+
+$gutter: 64px 24px 16px;
+$section-gap-s: 120px 80px 56px;
+$section-gap: 144px 96px 72px;
+$gap-columns: 32px 32px 16px;
+
+$space-2xs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 40px;
+$space-2xl: 64px;
+$space-3xl: 96px;
+
+$text-xs: 0.8125rem;
+$text-sm: 0.875rem;
+$text-md: 1rem;
+$text-lg: 1.25rem;
+$text-display-s: clamp(2.75rem, 5vw + 0.5rem, 4.5rem);
+$text-display: clamp(3.25rem, 6.6vw + 0.5rem, 7rem);
+$text-section: clamp(2.5rem, 5.4vw + 0.5rem, 6rem);
+$text-title: clamp(1.5rem, 0.8vw + 1.1rem, 1.875rem);
+$text-contacts: clamp(2.25rem, 7vw + 0.5rem, 7rem);
+$text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-display: 'Unbounded', ui-sans-serif, sans-serif;
+$font-body: 'Manrope', ui-sans-serif, sans-serif;
+$tracking-display: -0.05em;
+$display-weight: 800;
+$title-weight: 500;
+
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+$duration-short: 220ms;
+$duration-long: 420ms;
+$duration-hover: 700ms;
+
+$color-paper: #f8eeeb;
+$color-paper-2: #fff8f5;
+$color-paper-3: #f2cfcb;
+$color-soft: #f2cfcb;
+$color-soft-2: #ead9e0;
+$color-deep: #4a1e2c;
+$color-deep-2: #6b3343;
+$color-ink: #3a1622;
+$color-ink-2: #5c3340;
+$color-muted: #7a4e58;
+$color-rule: #d9b3b3;
+$color-accent: #b9405f;
+$color-accent-hover: #9c3250;
+$color-overlay: rgb(58 22 34 / 0.95);
+$color-accent-ink: #ffffff;
+$color-focus: #3a1622;
+$color-bulb: #fff4dc;
+$color-bulb-warm: #f6d6a4;
+$color-bulb-edge: #e8b97e;
+$color-bulb-socket: #2e111b;
+$color-bulb-glow: rgb(255 214 160 / 0.45);
+
+$z-raised: 10;
+$z-sticky-nav: 300;
+$z-modal: 400;
+
+$radius: 28px;
+$radius-inner: 18px;
+$radius-panel: 48px;
+$radius-pill: 999px;
+$shadow-card: 0 30px 60px -36px rgb(74 30 44 / 0.45);
+$shadow-lift: 0 40px 70px -34px rgb(74 30 44 / 0.5);
+
+$container: 1440px;
+$indent-step: 4px;
+$hairline: 1px;
+$rule-ink: 1.5px;
+$touch-target: 44px;
+$control-height: 48px;
+$header-height: 72px;
+$press-shift: 1px;
+$lift-shift: -12px;
+$lift-scale: 1.02;
+
+$mirror-bulb-size: clamp(18px, 2.1vw, 30px);
+$mirror-frame: clamp(34px, 3.6vw, 52px);
+
+$disabled-opacity: 0.5;
+$float-cycle: 7s;
+$marquee-cycle: 36s;
+$photo-ratio: 0.8;
+$plate-label-measure: 18ch;
+$lightbox-plate-width: 448px;
+
+$hero-stage-height-mobile: clamp(480px, 46vw + 300px, 640px);
+$hero-stage-height: clamp(420px, 46vw, 640px);
+
+$about-compact-width: 520px;
+$about-lid-radius: 32px 32px 10px 10px;
+$about-pans-radius: 10px 10px 32px 32px;
+$about-mirror-ratio: 1.1;
+$about-hinge-height: 14px;
+$about-pan-size: min(62px, 100%);
+$pan-nude: #f2cfcb;
+$pan-wedding: #e8b4a8;
+$pan-evening: #b9405f;
+$pan-photo: #6b3343;
+$pan-prom: #d9a6b8;
+$pan-creative: #c9a27e;
+
+$service-stack-step: 24px;
+$service-card-min-height: 260px;
+$service-card-radius: 32px;
+
+$case-pad-size: 96px;
+$case-step-number-width: 1.25em;
+$case-stage-max-width: 480px;
+$case-counter: case-step;
+$cotton-shadow:
+    0 12px 20px -8px rgb(58 31 38 / 0.4),
+    0 2px 4px rgb(58 31 38 / 0.12);
+$cotton-stain: rgb(196 112 120 / 0.55);
+
+$fit-display: 12cqi;
+$fit-section: 13cqi;
+$fit-card: 10cqi;
+$fit-plate: 9cqi;
+$fit-plate-note: 7cqi;
+$about-point-min-width: 160px;

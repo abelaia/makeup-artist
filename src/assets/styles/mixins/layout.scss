@@ -1,0 +1,91 @@
+@use 'sass:list';
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin column($gap: $space-md) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin button-reset {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+@mixin twelve-columns {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    @include adaptive(column-gap, $gap-columns);
+}
+
+@mixin touch-target {
+    min-width: $touch-target;
+    min-height: $touch-target;
+}
+
+@mixin transition($properties...) {
+    transition-duration: $duration-short;
+    transition-property: $properties;
+    transition-timing-function: $ease-out;
+}
+
+@mixin pressable {
+    &:active {
+        transform: translate($press-shift, $press-shift);
+    }
+}
+
+@mixin lift {
+    transition: transform $duration-hover $ease-soft;
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        content: '';
+        border-radius: inherit;
+        box-shadow: $shadow-lift;
+        opacity: 0;
+        transition: opacity $duration-hover $ease-soft;
+        pointer-events: none;
+    }
+
+    @include hover {
+        z-index: $z-raised;
+        transform: translateY($lift-shift) rotate(0deg) scale($lift-scale);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &:has(:focus-visible) {
+        z-index: $z-raised;
+        transform: translateY($lift-shift) rotate(0deg) scale($lift-scale);
+    }
+}
+
+@mixin adaptive($properties, $values) {
+    @each $property in $properties {
+        #{$property}: list.nth($values, 1);
+    }
+
+    @media (max-width: 60rem) {
+        @each $property in $properties {
+            #{$property}: list.nth($values, 2);
+        }
+    }
+
+    @media (max-width: 40rem) {
+        @each $property in $properties {
+            #{$property}: list.nth($values, 3);
+        }
+    }
+}

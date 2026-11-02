@@ -1,0 +1,24 @@
+@mixin display($size: $text-section) {
+    font-family: $font-display;
+    font-size: $size;
+    font-weight: $display-weight;
+    letter-spacing: $tracking-display;
+    line-height: 0.92;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+@mixin title($size: $text-title) {
+    font-family: $font-display;
+    font-size: $size;
+    font-weight: $title-weight;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+@mixin label {
+    color: $color-muted;
+    font-family: $font-body;
+    font-size: $text-sm;
+    font-weight: $font-weight-medium;
+}

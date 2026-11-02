@@ -1,0 +1,51 @@
+/** @type {readonly import('@/core/types').Service[]} */
+export const SERVICES = Object.freeze([
+    {
+        id: 'nude',
+        title: 'Дневной / nude',
+        description: 'Свежее лицо без ощущения макияжа.',
+        includes: ['Подготовка кожи', 'Лёгкий тон и консилер', 'Брови и ресницы'],
+        duration: null,
+        priceFrom: null,
+    },
+    {
+        id: 'evening',
+        title: 'Вечерний',
+        description: 'Выразительные глаза или губы, стойкость до утра.',
+        includes: ['Подготовка кожи', 'Тон и скульптурирование', 'Накладные пучки'],
+        duration: null,
+        priceFrom: null,
+    },
+    {
+        id: 'wedding',
+        title: 'Свадебный',
+        description: 'Образ, который выдержит слёзы, объятия и фотографа.',
+        includes: ['Пробный макияж заранее', 'Макияж в день свадьбы', 'Набор для поправок'],
+        duration: null,
+        priceFrom: null,
+    },
+    {
+        id: 'photo',
+        title: 'Для фотосессии',
+        description: 'Тон и акценты под студийный или дневной свет.',
+        includes: ['Подготовка кожи', 'Макияж под свет и камеру', 'Поправки на съёмке до часа'],
+        duration: null,
+        priceFrom: null,
+    },
+    {
+        id: 'prom',
+        title: 'Выпускной',
+        description: 'Нежно и по возрасту, чтобы нравилось и вам, и маме.',
+        includes: ['Подготовка кожи', 'Лёгкий тон', 'Блеск и румяна под платье'],
+        duration: null,
+        priceFrom: null,
+    },
+    {
+        id: 'lesson',
+        title: 'Урок «макияж для себя»',
+        description: 'Разберём вашу косметичку и научимся делать образ за 10 минут.',
+        includes: ['Разбор косметички', 'Пошаговая практика', 'Список средств под вас'],
+        duration: null,
+        priceFrom: null,
+    },
+]);
