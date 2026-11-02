@@ -18,9 +18,18 @@ export function useEraseMask() {
     /** @type {{x: number, y: number} | null} */
     let lastPoint = null;
 
-    function paint() {
-        frameId = null;
-        maskUrl.value = context.canvas.toDataURL();
+    async function paint() {
+        const url = context.canvas.toDataURL();
+        const image = new Image();
+
+        image.src = url;
+
+        try {
+            await image.decode();
+            maskUrl.value = url;
+        } finally {
+            frameId = null;
+        }
     }
 
     function schedulePaint() {
