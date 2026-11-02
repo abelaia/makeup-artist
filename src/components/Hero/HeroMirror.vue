@@ -116,8 +116,9 @@ const classes = computed(() => ['hero-mirror', {'hero-mirror--lit': props.isLit}
         }
 
         &--top {
+            justify-content: space-evenly;
             top: 0;
-            inset-inline: calc($mirror-frame * 2);
+            inset-inline: $mirror-frame;
             height: $mirror-frame;
         }
     }
