@@ -150,7 +150,6 @@ function handleOpen() {
     &--deep &__occasion,
     &--accent &__occasion {
         color: inherit;
-        opacity: 0.85;
     }
 }
 </style>

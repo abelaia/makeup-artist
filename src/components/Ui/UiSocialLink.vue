@@ -72,6 +72,8 @@ const isExternal = computed(() => props.social.href.startsWith('http'));
 
     &--compact {
         display: inline-flex;
+        justify-content: center;
+        min-width: $touch-target;
         min-height: $touch-target;
         border-bottom: none;
 

@@ -85,7 +85,6 @@ const style = computed(() => ({'--stack-index': props.index}));
         &--missing {
             font-family: $font-body;
             font-size: $text-sm;
-            opacity: 0.8;
         }
     }
 
@@ -98,7 +97,6 @@ const style = computed(() => ({'--stack-index': props.index}));
     &__duration {
         margin-top: auto;
         font-size: $text-sm;
-        opacity: 0.85;
     }
 
     &--soft-2 {

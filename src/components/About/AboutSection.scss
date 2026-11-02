@@ -93,7 +93,7 @@
     &__pan {
         align-items: center;
         color: $color-paper;
-        font-size: $text-xs;
+        font-size: $text-sm;
         text-align: center;
 
         @include column($space-xs);
